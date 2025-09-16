@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-// Aquí importas los datos. Asegúrate de que este archivo contiene el JSON
+// Aquí se importan los datos. Asegúrar de que este archivo contiene el JSON
 const employees = require('./employees.json');
 
 // Middleware para parsear JSON en el cuerpo de las peticiones
@@ -11,7 +11,7 @@ app.use(express.json());
 // Middleware personalizado para logging
 app.use((req, res, next) => {
     console.log(`Petición recibida en: ${req.method} ${req.url}`);
-    next(); // Permite que la petición continúe
+    next(); 
 });
 
 // --- Manejadores de rutas ---
