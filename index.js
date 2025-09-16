@@ -57,22 +57,14 @@ app.get('/api/employees', (req, res) => {
     }
 
 
-
     res.json(filteredEmployees);
 });
-
-
-
-
-
 
 
 // Ruta 6: Añadir un nuevo empleado
 app.post('/api/employees', (req, res) => {
     const newEmployee = req.body;
     
-    // Asumiendo que el JSON de entrada no tiene 'id'
-    // La validación del formato JSON es la misma
     const requiredKeys = ['name', 'age', 'phone', 'privileges', 'favorites', 'finished', 'badges', 'points'];
     const hasValidKeys = requiredKeys.every(key => newEmployee.hasOwnProperty(key));
     
